@@ -7,7 +7,8 @@ import {
   ref,
   set,
   get,
-  update
+  update,
+  onValue
 } from "firebase/database";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   const picksPerTeam = eventType === "major" ? 5 : 3;
 
   useEffect(() => {
-    const loadFromConfig = async () => {
+    const loadFromConfigAndFirebase = async () => {
       try {
         const res = await fetch("/tournament_config.json");
         const config = await res.json();
@@ -38,13 +39,6 @@ function App() {
             draftedTeams: [],
             currentPickIndex: 0
           });
-          setAvailableTeams(config.teams);
-          setDraftedTeams([]);
-          setCurrentPickIndex(0);
-        } else {
-          setAvailableTeams(data.availableTeams || []);
-          setDraftedTeams(data.draftedTeams || []);
-          setCurrentPickIndex(data.currentPickIndex || 0);
         }
       } catch (err) {
         console.error("Error loading config or Firebase:", err);
@@ -53,7 +47,17 @@ function App() {
       }
     };
 
-    loadFromConfig();
+    loadFromConfigAndFirebase();
+
+    // Enable real-time Firebase sync
+    const unsub = onValue(ref(db), (snapshot) => {
+      const data = snapshot.val() || {};
+      setAvailableTeams(data.availableTeams || []);
+      setDraftedTeams(data.draftedTeams || []);
+      setCurrentPickIndex(data.currentPickIndex || 0);
+    });
+
+    return () => unsub(); // clean up listener on unmount
   }, []);
 
   const getCurrentPicker = () => {
@@ -98,9 +102,6 @@ function App() {
         draftedTeams: [],
         currentPickIndex: 0
       });
-      setAvailableTeams(config.teams);
-      setDraftedTeams([]);
-      setCurrentPickIndex(0);
     } catch (err) {
       console.error("Failed to reset draft:", err);
     }
