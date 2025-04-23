@@ -49,7 +49,6 @@ function App() {
 
     loadFromConfigAndFirebase();
 
-    // Enable real-time Firebase sync
     const unsub = onValue(ref(db), (snapshot) => {
       const data = snapshot.val() || {};
       setAvailableTeams(data.availableTeams || []);
@@ -57,7 +56,7 @@ function App() {
       setCurrentPickIndex(data.currentPickIndex || 0);
     });
 
-    return () => unsub(); // clean up listener on unmount
+    return () => unsub();
   }, []);
 
   const getCurrentPicker = () => {
@@ -109,15 +108,17 @@ function App() {
 
   if (loading) return <div>Loading...</div>;
 
+  const draftComplete = currentPickIndex >= draftOrder.length * picksPerTeam;
+
   return (
     <div className="app">
       <h1>HFH Draft: {eventName}</h1>
       <button onClick={resetDraft}>🔁 Reset Draft</button>
       <h2>Available Teams</h2>
       <div className="current-picker">
-        {currentPickIndex < draftOrder.length * picksPerTeam
-          ? <>⛳️ On the clock: <span>{getCurrentPicker()}</span></>
-          : "✅ Draft Complete"}
+        {draftComplete
+          ? "✅ Draft Complete"
+          : <>⛳️ On the clock: <span>{getCurrentPicker()}</span></>}
       </div>
       <div className="team-list">
         {availableTeams.map((teamObj, idx) => (
@@ -125,7 +126,7 @@ function App() {
             key={idx}
             className="team-button"
             onClick={() => handleDraft(teamObj)}
-            disabled={currentPickIndex >= draftOrder.length * picksPerTeam}
+            disabled={draftComplete}
           >
             {teamObj.team} <span style={{ fontSize: "0.8em" }}>+{teamObj.odds}</span>
           </button>
@@ -140,6 +141,37 @@ function App() {
           </div>
         ))}
       </div>
+
+      {draftComplete && (
+        <div className="final-results">
+          <h2>Final Draft Summary</h2>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <thead>
+              <tr>
+                <th style={{ textAlign: "left", padding: "6px" }}>Drafter</th>
+                {Array.from({ length: picksPerTeam }, (_, i) => (
+                  <th key={i} style={{ textAlign: "left", padding: "6px" }}>Pick {i + 1}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {draftOrder.map((drafter) => {
+                const picks = draftedTeams.filter(e => e.drafter === drafter);
+                return (
+                  <tr key={drafter}>
+                    <td style={{ padding: "6px", fontWeight: "bold" }}>{drafter}</td>
+                    {Array.from({ length: picksPerTeam }, (_, i) => (
+                      <td key={i} style={{ padding: "6px" }}>
+                        {picks[i] ? `${picks[i].team} (+${picks[i].odds})` : ""}
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
