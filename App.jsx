@@ -7,17 +7,19 @@ import {
   ref,
   set,
   get,
-  onValue,
   update
 } from "firebase/database";
 
 function App() {
   const [eventName, setEventName] = useState("");
+  const [eventType, setEventType] = useState("regular");
   const [availableTeams, setAvailableTeams] = useState([]);
   const [draftedTeams, setDraftedTeams] = useState([]);
   const [currentPickIndex, setCurrentPickIndex] = useState(0);
   const [draftOrder, setDraftOrder] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const picksPerTeam = eventType === "major" ? 5 : 3;
 
   useEffect(() => {
     const loadFromConfig = async () => {
@@ -26,6 +28,7 @@ function App() {
         const config = await res.json();
         setEventName(config.eventName);
         setDraftOrder(config.draftOrder);
+        setEventType(config.type || "regular");
 
         const snapshot = await get(ref(db));
         const data = snapshot.val() || {};
@@ -62,7 +65,7 @@ function App() {
   };
 
   const handleDraft = (teamObj) => {
-    if (!teamObj || currentPickIndex >= draftOrder.length * 3) return;
+    if (!teamObj || currentPickIndex >= draftOrder.length * picksPerTeam) return;
 
     const newDraft = {
       pick: currentPickIndex + 1,
@@ -89,6 +92,7 @@ function App() {
       const config = await res.json();
       setEventName(config.eventName);
       setDraftOrder(config.draftOrder);
+      setEventType(config.type || "regular");
       await set(ref(db), {
         availableTeams: config.teams,
         draftedTeams: [],
@@ -110,7 +114,7 @@ function App() {
       <button onClick={resetDraft}>🔁 Reset Draft</button>
       <h2>Available Teams</h2>
       <div className="current-picker">
-        {currentPickIndex < draftOrder.length * 3
+        {currentPickIndex < draftOrder.length * picksPerTeam
           ? <>⛳️ On the clock: <span>{getCurrentPicker()}</span></>
           : "✅ Draft Complete"}
       </div>
@@ -120,7 +124,7 @@ function App() {
             key={idx}
             className="team-button"
             onClick={() => handleDraft(teamObj)}
-            disabled={currentPickIndex >= draftOrder.length * 3}
+            disabled={currentPickIndex >= draftOrder.length * picksPerTeam}
           >
             {teamObj.team} <span style={{ fontSize: "0.8em" }}>+{teamObj.odds}</span>
           </button>
