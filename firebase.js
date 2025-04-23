@@ -1,15 +1,14 @@
-
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBT9qWHu61xNh7sIArzXTjdgSxxPp0ofME",
-  authDomain: "hfh-golf-draft.firebaseapp.com",
-  projectId: "hfh-golf-draft",
-  storageBucket: "hfh-golf-draft.appspot.com",
-  messagingSenderId: "88207474267",
-  appId: "1:88207474267:web:4c09c1f7438141c70c497e",
-  databaseURL: "https://hfh-golf-draft-default-rtdb.firebaseio.com"
+  apiKey: "AIzaSyCystWTtZcGHAISxFFGxJ7uS81ULlQoAJ0",
+  authDomain: "hfh-fantasy-golf-dev.firebaseapp.com",
+  databaseURL: "https://hfh-fantasy-golf-dev-default-rtdb.firebaseio.com",
+  projectId: "hfh-fantasy-golf-dev",
+  storageBucket: "hfh-fantasy-golf-dev.appspot.com",
+  messagingSenderId: "762826891454",
+  appId: "1:762826891454:web:7550a01dd9a527b7a3eef"
 };
 
 const app = initializeApp(firebaseConfig);
