@@ -3,8 +3,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1b5e20"/>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js")
+          .then(() => console.log("Service Worker registered"));
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HFH Golf Draft</title>
+    <title>HFH Fantasy Golf</title>
   </head>
   <body>
     <div id="root"></div>
