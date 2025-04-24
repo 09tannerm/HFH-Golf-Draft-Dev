@@ -1,8 +1,10 @@
 
 import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./style.css";
 import { setupNotifications } from "./firebase";
 
-export default function App() {
+function App() {
   const [currentDrafterName, setCurrentDrafterName] = useState("Connor Cremers");
 
   useEffect(() => {
@@ -19,3 +21,6 @@ export default function App() {
     </div>
   );
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
