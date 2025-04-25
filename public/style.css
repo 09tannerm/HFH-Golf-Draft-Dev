@@ -1,0 +1,38 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f4f3;
+  margin: 0;
+  padding: 20px;
+}
+h1 {
+  color: #1a5e2a;
+}
+button {
+  margin: 5px;
+  padding: 10px;
+  background-color: #1a5e2a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:disabled {
+  background-color: #ccc;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  text-align: center;
+}
+thead {
+  background-color: #d7f0db;
+}
+.team-column {
+  background-color: #e7f9f1;
+  font-weight: bold;
+}

@@ -1,15 +1,9 @@
 {
-  "name": "HFH Fantasy Golf",
-  "short_name": "HFH",
-  "start_url": "/",
+  "name": "HFH Golf Draft",
+  "short_name": "HFH Draft",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#1b5e20",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ]
+  "description": "Fantasy Golf Snake Draft App",
+  "icons": []
 }

@@ -1,2 +1,1 @@
-// Empty for now
-export default {};
+// Firebase setup placeholder

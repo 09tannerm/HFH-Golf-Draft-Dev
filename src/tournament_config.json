@@ -1,0 +1,322 @@
+[
+  {
+    "name": "Golfer 1",
+    "odds": 1000
+  },
+  {
+    "name": "Golfer 2",
+    "odds": 1100
+  },
+  {
+    "name": "Golfer 3",
+    "odds": 1200
+  },
+  {
+    "name": "Golfer 4",
+    "odds": 1300
+  },
+  {
+    "name": "Golfer 5",
+    "odds": 1400
+  },
+  {
+    "name": "Golfer 6",
+    "odds": 1500
+  },
+  {
+    "name": "Golfer 7",
+    "odds": 1600
+  },
+  {
+    "name": "Golfer 8",
+    "odds": 1700
+  },
+  {
+    "name": "Golfer 9",
+    "odds": 1800
+  },
+  {
+    "name": "Golfer 10",
+    "odds": 1900
+  },
+  {
+    "name": "Golfer 11",
+    "odds": 2000
+  },
+  {
+    "name": "Golfer 12",
+    "odds": 2100
+  },
+  {
+    "name": "Golfer 13",
+    "odds": 2200
+  },
+  {
+    "name": "Golfer 14",
+    "odds": 2300
+  },
+  {
+    "name": "Golfer 15",
+    "odds": 2400
+  },
+  {
+    "name": "Golfer 16",
+    "odds": 2500
+  },
+  {
+    "name": "Golfer 17",
+    "odds": 2600
+  },
+  {
+    "name": "Golfer 18",
+    "odds": 2700
+  },
+  {
+    "name": "Golfer 19",
+    "odds": 2800
+  },
+  {
+    "name": "Golfer 20",
+    "odds": 2900
+  },
+  {
+    "name": "Golfer 21",
+    "odds": 3000
+  },
+  {
+    "name": "Golfer 22",
+    "odds": 3100
+  },
+  {
+    "name": "Golfer 23",
+    "odds": 3200
+  },
+  {
+    "name": "Golfer 24",
+    "odds": 3300
+  },
+  {
+    "name": "Golfer 25",
+    "odds": 3400
+  },
+  {
+    "name": "Golfer 26",
+    "odds": 3500
+  },
+  {
+    "name": "Golfer 27",
+    "odds": 3600
+  },
+  {
+    "name": "Golfer 28",
+    "odds": 3700
+  },
+  {
+    "name": "Golfer 29",
+    "odds": 3800
+  },
+  {
+    "name": "Golfer 30",
+    "odds": 3900
+  },
+  {
+    "name": "Golfer 31",
+    "odds": 4000
+  },
+  {
+    "name": "Golfer 32",
+    "odds": 4100
+  },
+  {
+    "name": "Golfer 33",
+    "odds": 4200
+  },
+  {
+    "name": "Golfer 34",
+    "odds": 4300
+  },
+  {
+    "name": "Golfer 35",
+    "odds": 4400
+  },
+  {
+    "name": "Golfer 36",
+    "odds": 4500
+  },
+  {
+    "name": "Golfer 37",
+    "odds": 4600
+  },
+  {
+    "name": "Golfer 38",
+    "odds": 4700
+  },
+  {
+    "name": "Golfer 39",
+    "odds": 4800
+  },
+  {
+    "name": "Golfer 40",
+    "odds": 4900
+  },
+  {
+    "name": "Golfer 41",
+    "odds": 5000
+  },
+  {
+    "name": "Golfer 42",
+    "odds": 5100
+  },
+  {
+    "name": "Golfer 43",
+    "odds": 5200
+  },
+  {
+    "name": "Golfer 44",
+    "odds": 5300
+  },
+  {
+    "name": "Golfer 45",
+    "odds": 5400
+  },
+  {
+    "name": "Golfer 46",
+    "odds": 5500
+  },
+  {
+    "name": "Golfer 47",
+    "odds": 5600
+  },
+  {
+    "name": "Golfer 48",
+    "odds": 5700
+  },
+  {
+    "name": "Golfer 49",
+    "odds": 5800
+  },
+  {
+    "name": "Golfer 50",
+    "odds": 5900
+  },
+  {
+    "name": "Golfer 51",
+    "odds": 6000
+  },
+  {
+    "name": "Golfer 52",
+    "odds": 6100
+  },
+  {
+    "name": "Golfer 53",
+    "odds": 6200
+  },
+  {
+    "name": "Golfer 54",
+    "odds": 6300
+  },
+  {
+    "name": "Golfer 55",
+    "odds": 6400
+  },
+  {
+    "name": "Golfer 56",
+    "odds": 6500
+  },
+  {
+    "name": "Golfer 57",
+    "odds": 6600
+  },
+  {
+    "name": "Golfer 58",
+    "odds": 6700
+  },
+  {
+    "name": "Golfer 59",
+    "odds": 6800
+  },
+  {
+    "name": "Golfer 60",
+    "odds": 6900
+  },
+  {
+    "name": "Golfer 61",
+    "odds": 7000
+  },
+  {
+    "name": "Golfer 62",
+    "odds": 7100
+  },
+  {
+    "name": "Golfer 63",
+    "odds": 7200
+  },
+  {
+    "name": "Golfer 64",
+    "odds": 7300
+  },
+  {
+    "name": "Golfer 65",
+    "odds": 7400
+  },
+  {
+    "name": "Golfer 66",
+    "odds": 7500
+  },
+  {
+    "name": "Golfer 67",
+    "odds": 7600
+  },
+  {
+    "name": "Golfer 68",
+    "odds": 7700
+  },
+  {
+    "name": "Golfer 69",
+    "odds": 7800
+  },
+  {
+    "name": "Golfer 70",
+    "odds": 7900
+  },
+  {
+    "name": "Golfer 71",
+    "odds": 8000
+  },
+  {
+    "name": "Golfer 72",
+    "odds": 8100
+  },
+  {
+    "name": "Golfer 73",
+    "odds": 8200
+  },
+  {
+    "name": "Golfer 74",
+    "odds": 8300
+  },
+  {
+    "name": "Golfer 75",
+    "odds": 8400
+  },
+  {
+    "name": "Golfer 76",
+    "odds": 8500
+  },
+  {
+    "name": "Golfer 77",
+    "odds": 8600
+  },
+  {
+    "name": "Golfer 78",
+    "odds": 8700
+  },
+  {
+    "name": "Golfer 79",
+    "odds": 8800
+  },
+  {
+    "name": "Golfer 80",
+    "odds": 8900
+  }
+]
