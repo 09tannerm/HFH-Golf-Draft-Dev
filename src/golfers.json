@@ -1,34 +1,15 @@
+
 [
-  {
-    "name": "Scottie Scheffler",
-    "odds": "+300"
-  },
-  {
-    "name": "Jordan Spieth",
-    "odds": "+1200"
-  },
-  {
-    "name": "Hideki Matsuyama",
-    "odds": "+1800"
-  },
-  {
-    "name": "Tom Kim",
-    "odds": "+2200"
-  },
-  {
-    "name": "Min Woo Lee",
-    "odds": "+2500"
-  },
-  {
-    "name": "K.H. Lee",
-    "odds": "+2800"
-  },
-  {
-    "name": "Adam Scott",
-    "odds": "+3000"
-  },
-  {
-    "name": "Alex Noren",
-    "odds": "+3500"
-  }
+  { "name": "Jason Day", "odds": 2000 },
+  { "name": "Adam Scott", "odds": 2200 },
+  { "name": "Si Woo Kim", "odds": 1600 },
+  { "name": "Tom Hoge", "odds": 2500 },
+  { "name": "Jordan Spieth", "odds": 1400 },
+  { "name": "Alex Noren", "odds": 2200 },
+  { "name": "Stephan Jaeger", "odds": 2500 },
+  { "name": "Min Woo Lee", "odds": 2500 },
+  { "name": "Kurt Kitayama", "odds": 3500 },
+  { "name": "Doug Ghim", "odds": 6000 },
+  { "name": "Luke List", "odds": 8000 },
+  { "name": "Taylor Montgomery", "odds": 11000 }
 ]
