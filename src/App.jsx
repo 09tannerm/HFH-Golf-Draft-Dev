@@ -1,42 +1,56 @@
 import React, { useState } from "react";
 import golfers from "./golfers.json";
+import "./style.css";
 
 function App() {
-  const [available, setAvailable] = useState(golfers);
   const [drafted, setDrafted] = useState([]);
   const [history, setHistory] = useState([]);
 
-  const handlePick = (golfer) => {
+  const handleDraft = (golfer) => {
+    setHistory([...history, drafted]);
     setDrafted([...drafted, golfer]);
-    setAvailable(available.filter((g) => g.name !== golfer.name));
-    setHistory([...history, { type: "pick", golfer }]);
   };
 
   const undo = () => {
-    const last = history.pop();
-    if (last?.type === "pick") {
-      setDrafted(drafted.filter((g) => g.name !== last.golfer.name));
-      setAvailable([...available, last.golfer]);
+    if (history.length > 0) {
+      const previous = history[history.length - 1];
+      setHistory(history.slice(0, -1));
+      setDrafted(previous);
     }
-    setHistory([...history]);
+  };
+
+  const redo = () => {
+    // Placeholder for redo logic
+    alert("Redo is not implemented yet.");
   };
 
   return (
-    <div>
-      <h1>HFH Golf Draft: CJ Cup Byron Nelson</h1>
-      <button onClick={undo}>Undo</button>
-      <h2>Available Golfers</h2>
-      {available.sort((a, b) => a.odds - b.odds).map((g) => (
-        <button key={g.name} onClick={() => handlePick(g)}>
-          {g.name} (+{g.odds})
-        </button>
-      ))}
-      <h2>Drafted Golfers</h2>
-      <ul>
-        {drafted.map((g) => (
-          <li key={g.name} className="drafted">{g.name} (+{g.odds})</li>
-        ))}
-      </ul>
+    <div className="App">
+      <h1>HFH Golf Draft</h1>
+      <div className="controls">
+        <button onClick={undo}>Undo</button>
+        <button onClick={redo}>Redo</button>
+      </div>
+      <div className="draft-board">
+        <h2>Available Golfers</h2>
+        <ul>
+          {golfers.filter(g => !drafted.includes(g.name)).map((golfer, index) => (
+            <li key={index}>
+              <button onClick={() => handleDraft(golfer.name)}>
+                {golfer.name} ({golfer.odds})
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="summary">
+        <h2>Drafted</h2>
+        <ol>
+          {drafted.map((name, i) => (
+            <li key={i}>{name}</li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }
