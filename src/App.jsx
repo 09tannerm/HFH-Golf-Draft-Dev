@@ -11,7 +11,7 @@ const teamNames = [
 export default function App() {
   const [draftedGolfers, setDraftedGolfers] = useState([]);
   const [currentPick, setCurrentPick] = useState(0);
-  const totalRounds = 5; // adjust for majors or regular events
+  const totalRounds = 5;
 
   const currentTeam = teamNames[
     Math.floor(currentPick / totalRounds) % teamNames.length
